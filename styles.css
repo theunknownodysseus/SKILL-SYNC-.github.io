@@ -1,0 +1,552 @@
+
+body {
+    font-family: 'Poppins';font-size: 22px;
+    background-color: #19223d;
+    margin: 20px;
+    padding: 0;
+    color: #cccfdb;
+}
+/* Navbar style */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #0095ff;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Navbar menu toggle (for mobile) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+.menu-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 99;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links a {
+        margin: 15px 0;
+    }
+}
+
+input{
+    font-family: 'Poppins';font-size: 22px;
+    color: #ede5e5;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 20px; /* Add padding on top to prevent overlap */
+    margin-top: 70px; 
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+h1 {
+    font-size: 11vh;
+    text-align: center;
+    color: #fcfafa;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: #1e2948;
+}
+
+#roadmap {
+    width: 100vh;
+    height: 100vh;
+    border: 1px ;
+}
+
+/* Loader Spinner */
+/* From Uiverse.io by Nawsome */ 
+.loadingspinner {
+--square: 26px;
+--offset: 30px;
+--duration: 2.4s;
+--delay: 0.2s;
+--timing-function: ease-in-out;
+--in-duration: 0.4s;
+--in-delay: 0.1s;
+--in-timing-function: ease-out;
+width: calc( 3 * var(--offset) + var(--square));
+height: calc( 2 * var(--offset) + var(--square));
+padding: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+margin-bottom: 30px;
+position: relative;
+}
+
+.loadingspinner div {
+display: inline-block;
+opacity: 77%;
+background: rgb(63, 85, 213);
+/*background: var(--text-color);*/
+/*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
+border: none;
+border-radius: 2px;
+width: var(--square);
+height: var(--square);
+position: absolute;
+padding: 0px;
+margin: 0px;
+font-size: 6pt;
+color: black;
+}
+
+.loadingspinner #square1 {
+left: calc( 0 * var(--offset) );
+top: calc( 0 * var(--offset) );
+animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+       squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square2 {
+left: calc( 0 * var(--offset) );
+top: calc( 1 * var(--offset) );
+animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+      squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square3 {
+left: calc( 1 * var(--offset) );
+top: calc( 1 * var(--offset) );
+animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+       squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square4 {
+left: calc( 2 * var(--offset) );
+top: calc( 1 * var(--offset) );
+animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+       squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+.loadingspinner #square5 {
+left: calc( 3 * var(--offset) );
+top: calc( 1 * var(--offset) );
+animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+       squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+}
+
+@keyframes square1 {
+0% {
+left: calc( 0 * var(--offset) );
+top: calc( 0 * var(--offset) );
+}
+
+8.333% {
+left: calc( 0 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+100% {
+left: calc( 0 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+}
+
+@keyframes square2 {
+0% {
+left: calc( 0 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+8.333% {
+left: calc( 0 * var(--offset) );
+top: calc( 2 * var(--offset) );
+}
+
+16.67% {
+left: calc( 1 * var(--offset) );
+top: calc( 2 * var(--offset) );
+}
+
+25.00% {
+left: calc( 1 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+83.33% {
+left: calc( 1 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+91.67% {
+left: calc( 1 * var(--offset) );
+top: calc( 0 * var(--offset) );
+}
+
+100% {
+left: calc( 0 * var(--offset) );
+top: calc( 0 * var(--offset) );
+}
+}
+
+@keyframes square3 {
+0%,100% {
+left: calc( 1 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+16.67% {
+left: calc( 1 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+25.00% {
+left: calc( 1 * var(--offset) );
+top: calc( 0 * var(--offset) );
+}
+
+33.33% {
+left: calc( 2 * var(--offset) );
+top: calc( 0 * var(--offset) );
+}
+
+41.67% {
+left: calc( 2 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+66.67% {
+left: calc( 2 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+75.00% {
+left: calc( 2 * var(--offset) );
+top: calc( 2 * var(--offset) );
+}
+
+83.33% {
+left: calc( 1 * var(--offset) );
+top: calc( 2 * var(--offset) );
+}
+
+91.67% {
+left: calc( 1 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+}
+
+@keyframes square4 {
+0% {
+left: calc( 2 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+33.33% {
+left: calc( 2 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+41.67% {
+left: calc( 2 * var(--offset) );
+top: calc( 2 * var(--offset) );
+}
+
+50.00% {
+left: calc( 3 * var(--offset) );
+top: calc( 2 * var(--offset) );
+}
+
+58.33% {
+left: calc( 3 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+100% {
+left: calc( 3 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+}
+
+@keyframes square5 {
+0% {
+left: calc( 3 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+50.00% {
+left: calc( 3 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+58.33% {
+left: calc( 3 * var(--offset) );
+top: calc( 0 * var(--offset) );
+}
+
+66.67% {
+left: calc( 2 * var(--offset) );
+top: calc( 0 * var(--offset) );
+}
+
+75.00% {
+left: calc( 2 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+
+100% {
+left: calc( 2 * var(--offset) );
+top: calc( 1 * var(--offset) );
+}
+}
+
+@keyframes squarefadein {
+0% {
+transform: scale(0.75);
+opacity: 0.0;
+}
+
+100% {
+transform: scale(1.0);
+opacity: 1.0;
+}
+}
+
+/* Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.node circle {
+    fill: rgb(69, 48, 85);
+    stroke: #25335c;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    font-size: 10px;
+    fill: #ede5e5;
+}
+
+.link {
+    fill: none;
+    stroke: #1d2c5a;
+    stroke-width: 2px;
+}
+.checkbox-wrapper-4 * {
+box-sizing: border-box;
+}
+.checkbox-wrapper-4 .cbx {
+-webkit-user-select: none;
+user-select: none;
+cursor: pointer;
+padding: 6px 8px;
+border-radius: 6px;
+overflow: hidden;
+transition: all 0.2s ease;
+display: inline-block;
+}
+.checkbox-wrapper-4 .cbx:not(:last-child) {
+margin-right: 6px;
+}
+.checkbox-wrapper-4 .cbx:hover {
+background: rgba(0,119,255,0.06);
+}
+.checkbox-wrapper-4 .cbx span {
+float: left;
+vertical-align: middle;
+transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-4 .cbx span:first-child {
+position: relative;
+width: 18px;
+height: 18px;
+border-radius: 4px;
+transform: scale(1);
+border: 1px solid #cccfdb;
+transition: all 0.2s ease;
+box-shadow: 0 1px 1px rgba(0,16,75,0.05);
+}
+.checkbox-wrapper-4 .cbx span:first-child svg {
+position: absolute;
+top: 3px;
+left: 2px;
+fill: none;
+stroke: #fff;
+stroke-width: 2;
+stroke-linecap: round;
+stroke-linejoin: round;
+stroke-dasharray: 16px;
+stroke-dashoffset: 16px;
+transition: all 0.3s ease;
+transition-delay: 0.1s;
+transform: translate3d(0, 0, 0);
+}
+.checkbox-wrapper-4 .cbx span:last-child {
+padding-left: 8px;
+line-height: 18px;
+}
+.checkbox-wrapper-4 .cbx:hover span:first-child {
+border-color: #07f;
+}
+.checkbox-wrapper-4 .inp-cbx {
+position: absolute;
+visibility: hidden;
+}
+.checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child {
+background: #07f;
+border-color: #07f;
+animation: wave-4 0.4s ease;
+}
+.checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child svg {
+stroke-dashoffset: 0;
+}
+.checkbox-wrapper-4 .inline-svg {
+position: absolute;
+width: 0;
+height: 0;
+pointer-events: none;
+user-select: none;
+}
+@media screen and (max-width: 640px) {
+.checkbox-wrapper-4 .cbx {
+width: 100%;
+display: inline-block;
+}
+}
+@-moz-keyframes wave-4 {
+50% {
+transform: scale(0.9);
+}
+}
+@-webkit-keyframes wave-4 {
+50% {
+transform: scale(0.9);
+}
+}
+@-o-keyframes wave-4 {
+50% {
+transform: scale(0.9);
+}
+}
+@keyframes wave-4 {
+50% {
+transform: scale(0.9);
+}
+}
+.button {
+
+--bezier: cubic-bezier(0.22, 0.61, 0.36, 1);
+--edge-light: hsla(0, 0%, 50%, 0.8);
+--text-light: rgba(255, 255, 255, 0.4);
+--back-color: 240, 40%;
+font-family: 'Poppins';font-size: 22px;
+cursor: pointer;
+padding: 0.7em 1em;
+border-radius: 0.5em;
+min-height: 2.4em;
+min-width: 3em;
+display: block;
+align-items: center;
+gap: 0.5em;
+max-width: fit-content;
+
+font-size: 18px;
+letter-spacing: 0.02em;
+line-height: 1;
+
+background: linear-gradient(
+140deg,
+hsla(var(--back-color), 50%, 1) min(2em, 20%),
+hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+);
+color: hsla(0, 0%, 90%);
+border: 0;
+box-shadow: inset 0.4px 1px 4px var(--edge-light);
+
+transition: all 0.1s var(--bezier);
+}
+
+.button:hover {
+--edge-light: hsla(0, 0%, 50%, 1);
+text-shadow: 0px 0px 10px var(--text-light);
+box-shadow: inset 0.4px 1px 4px var(--edge-light),
+2px 4px 8px hsla(0, 0%, 0%, 0.295);
+transform: scale(1.1);
+}
+
+.button:active {
+--text-light: rgba(255, 255, 255, 1);
+
+background: linear-gradient(
+140deg,
+hsla(var(--back-color), 50%, 1) min(2em, 20%),
+hsla(var(--back-color), 50%, 0.6) min(8em, 100%)
+);
+box-shadow: inset 0.4px 1px 8px var(--edge-light),
+0px 0px 8px hsla(var(--back-color), 50%, 0.6);
+text-shadow: 0px 0px 20px var(--text-light);
+color: hsla(0, 0%, 100%, 1);
+letter-spacing: 0.1em;
+transform: scale(1);
+}
