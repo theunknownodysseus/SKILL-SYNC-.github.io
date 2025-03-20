@@ -17,7 +17,7 @@ async function generateRoadmap() {
 
 // API request to Cohere for generating the roadmap
 async function fetchRoadmap(topic) {
-  const apiKey = 'cdQoOy9j83AUwV4zS4uMhUoQoiPvWQDtFUDadYBL';  // Replace with your Cohere API key
+  const apiKey = 'cohere-key';  // Replace with your Cohere API key
   const endpoint = 'https://api.cohere.ai/v1/generate';  // Cohere API endpoint
 
   const prompt = `
